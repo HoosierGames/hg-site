@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Hoosier Games</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:300,500" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./hg-common.css" />
+    <script type="text/javascript">
+        var foo;
+        function setActiveEvent(element)
+        {
+            var links = document.getElementsByClassName("event-link");
+            for (i = 0; i < links.length; i++)
+            {
+                links[i].classList.remove('active');
+            }
+            element.classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <div class="top">
+        <div class="site-title">
+            <div class="logo"></div>
+            <div class="text no-select">
+                Hoosier&nbsp;<span class="big-text">Games</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav all-smooth">
+        <div class="nav-main">
+            <a href="./"><div class="no-select nav-item">home</div></a>
+            <a href="./events.html"><div class="no-select nav-item active">events</div></a>
+            <a href="./about.html"><div class="no-select nav-item">about</div></a>
+            <a href="./projects.html"><div class="no-select nav-item">projects</div></a>
+            <a href="./contact.html"><div class="no-select nav-item">contact</div></a>
+        </div>
+
+        <!-- <input type="checkbox" name="sign-in-visibility" id="sign-in-visibility" class="hidden" />
+        <label for="sign-in-visibility" class="nav-item sign-in no-select">sign&nbsp;in</label>
+        <div class="dropdown no-select">
+            <div class="title no-select">Sign In</div>
+            <div class="dropdown-main">
+                <div class="input-line no-select"><span class="input-label">username:</span><input type="text" value="Hello" /></div>
+                <div class="input-line no-select"><span class="input-label">password:</span><input type="password" value="Hello" /></div>
+                <input class="input-submit no-select" type="submit" value="sign in" />
+            </div>
+        </div> -->
+    </div>
+
+    <div class="middle">
+        <div class="title">
+            <div class="text no-select">Events!</div>
+        </div>
+        <div class="content card-row">
+            <div class="card medium-thick">
+                <strong class="big-text">Upcoming Events</strong>
+
+                <a href="./" target="event-frame" class="event-link smooth active" onclick="setActiveEvent(this)">
+                    <div class="event-row">
+                        <div class="date">Jan 25:</div>
+                        <div class="text">Pitch Night</div>
+                    </div>
+                </a>
+                <a href="./" target="event-frame" class="event-link smooth" onclick="setActiveEvent(this)">
+                    <div class="event-row">
+                        <div class="date">Feb 15:</div>
+                        <div class="text">Guest Talk: Virginia Critchfield</div>
+                    </div>
+                </a>
+                <a href="./" target="event-frame" class="event-link smooth" onclick="setActiveEvent(this)">
+                    <div class="event-row">
+                        <div class="date">Mar 01:</div>
+                        <div class="text">Mid-Semester Presentations</div>
+                    </div>
+                </a>
+                <a href="./" target="event-frame" class="event-link smooth" onclick="setActiveEvent(this)">
+                    <div class="event-row">
+                        <div class="date">Mar 08:</div>
+                        <div class="text">Pre-Spring Break Game Night</div>
+                    </div>
+                </a>
+                <a href="./" target="event-frame" class="event-link smooth" onclick="setActiveEvent(this)">
+                    <div class="event-row">
+                        <div class="date">Mar 22:</div>
+                        <div class="text">Second 4-Week Pitches</div>
+                    </div>
+                </a>
+                <a href="./" target="event-frame" class="event-link smooth" onclick="setActiveEvent(this)">
+                    <div class="event-row">
+                        <div class="date">Apr 26:</div>
+                        <div class="text">Final Presentations</div>
+                    </div>
+                </a>
+            </div>
+            <iframe name="event-frame" class="card medium-thin full"></iframe>
+        </div>
+        <div class="title">
+            <div class="text no-select">Calendar</div>
+        </div>
+        <iframe class="card single" src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=1hu658mpvos2qa3ur8qahhi5bg%40group.calendar.google.com&amp;color=%23A32929&amp;ctz=America%2FNew_York" height="600" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div class="bottom">
+        <!-- Website by Rajin Shankar, 2018 -->
+    </div>
+</body>
+</html>
