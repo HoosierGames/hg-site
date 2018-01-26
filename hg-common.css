@@ -568,4 +568,8 @@ strong {
     body {
         font-size: 2.2rem;
     }
+
+    .nav {
+        flex-wrap: wrap;
+    }
 }
