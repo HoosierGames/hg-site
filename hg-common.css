@@ -26,7 +26,7 @@ strong {
     display: none;
 }
 
-.no-select {
+.no-select, .no-select-all * {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -242,7 +242,7 @@ strong {
         font-size: 4.2em;
         font-weight: 900;
         height: .93em;
-        padding: .2em 0 0 .8em;
+        padding: .2em 0 0 .476em;
         position: relative;
         z-index: -1;
     }
@@ -260,11 +260,25 @@ strong {
         z-index: 3;
     }
 
+    .middle .subtitle {
+        color: #666;
+        font-size: 1.5em;
+        padding: .2em 0 0 2.4em;
+        font-weight: 300;
+        font-style: italic;
+    }
+
     .middle .content {
         font-size: 2em;
         font-weight: 300;
         padding: .7em 1em;
     }
+
+        .middle .content.description {
+            font-size: 1.5em;
+            padding: 0 1.3333em;
+            font-style: italic;
+        }
 
         .middle .content img {
             max-width: 13em;
@@ -489,9 +503,10 @@ strong {
 .contact-card a {
     color: #444;
 }
-.contact-card a:hover {
-    color: #bf1e2e;
-}
+
+    .contact-card a:hover {
+        color: #bf1e2e;
+    }
 
 .contact-card img.contact-icon {
     display: block;
@@ -501,6 +516,7 @@ strong {
     transition: all 0.25s;
     cursor: pointer;
 }
+
 .contact-card:hover img.contact-icon {
     width: 110%;
     margin: -5%;
@@ -510,4 +526,46 @@ strong {
     margin-top: 1em;
     font-weight: 500;
     cursor: pointer;
+}
+
+@media screen and (max-width: 1080px) {
+    .card-row {
+        flex-direction: column;
+        align-items: center;
+        height: unset;
+    }
+
+        .card-row .card {
+            min-height: 12em;
+            width: 90% !important;
+        }
+
+            .card-row .card:not(:last-child) {
+                margin-bottom: 1em;
+            }
+
+            .card-row .card.full {
+                width: 95% !important;
+            }
+
+            .card-row .card.thin, .card-row .card.thinner {
+                height: unset;
+                min-height: unset;
+            }
+
+            .card-row .card img {
+                display: inline-block;
+                width: 7em;
+            }
+
+            .card-row .card:hover img {
+                margin: 0;
+                width: 7em;
+            }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio : 2) {
+    body {
+        font-size: 2.2rem;
+    }
 }
