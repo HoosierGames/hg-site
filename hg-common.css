@@ -566,7 +566,15 @@ strong {
 
 @media screen and (-webkit-min-device-pixel-ratio : 2) {
     body {
-        font-size: 2.2rem;
+        font-size: 2rem;
+    }
+
+    .middle .title {
+        font-size: 3em;
+    }
+
+    .flex {
+        flex-direction: column;
     }
 
     .site-title {
@@ -574,12 +582,14 @@ strong {
         align-items: center;
         justify-content: center;
     }
+
         .site-title .logo {
             width: 75vw;
             height: 75vw;
             margin: -15vw 0;
             padding: 0;
         }
+
         .site-title .text {
             display: none;
         }
@@ -587,7 +597,18 @@ strong {
     .nav {
         flex-wrap: wrap;
     }
+
         .nav .nav-main {
             flex-wrap: wrap;
+        }
+
+    .card {
+        padding: .5em;
+    }
+
+        .card .card-img {
+            order: -1;
+            padding: 40%;
+            margin: 1em;
         }
 }
