@@ -611,4 +611,8 @@ strong {
             padding: 40%;
             margin: 1em;
         }
+
+        .card.tall {
+            min-height: 15em;
+        }
 }
