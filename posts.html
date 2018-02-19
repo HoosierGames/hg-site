@@ -12,16 +12,17 @@
         var post = window.location.href.split('?');
         var len = post.length;
         post = post[post.length - 1];
+        var content = "";
 
-        if (len > 1 && post != undefined) {
-            var content = "";
-            $.get("posts/" + post + ".html", function (data) { content = data; });
-
-            if (content != "") {
+        if (len > 1) {
+            $.get("./posts/" + post + ".html", function (data) {
                 $(document).ready(function () {
-                    $("#load").html(content);
+                    $("#load").html(data);
                 });
-            }
+            });
+        }
+        else {
+            console.log("Invalid URL: " + window.location.href);
         }
     </script>
 </head>

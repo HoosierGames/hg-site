@@ -294,10 +294,10 @@ strong {
             border: 1px solid #fff;
             box-shadow: 5px 5px 0 #ccc;
         }
-        
-        .middle .content img.no-shadow {
-            box-shadow: none;
-        }
+
+            .middle .content img.no-shadow {
+                box-shadow: none;
+            }
 
             .middle .content img.left {
                 float: left;
@@ -670,6 +670,7 @@ strong {
         bottom: -1.2em;
         color: #ccc;
     }
+
     .expand-button:before {
         content: '. . .';
         white-space: nowrap;
@@ -697,12 +698,37 @@ strong {
 .expand-toggle:checked ~ .expand-button {
     margin-top: 0;
 }
-.expand-toggle:checked ~ .expand-button:after {
-    content: 'show less';
+
+    .expand-toggle:checked ~ .expand-button:after {
+        content: 'show less';
+    }
+
+    .expand-toggle:checked ~ .expand-button:before {
+        content: '';
+    }
+
+    .expand-toggle:checked ~ .expand-button .cross {
+        transform: rotate(45deg);
+    }
+
+.img {
+    position: relative;
+    background-position: center;
+    height: 20em;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 2.5em;
+    border-radius: 0.2em;
+    border: 1px solid #fff;
+    box-shadow: 5px 5px 0 #ccc;
+    font-size: 0.75em;
+    text-align: center;
 }
-.expand-toggle:checked ~ .expand-button:before {
-    content: '';
-}
-.expand-toggle:checked ~ .expand-button .cross {
-    transform: rotate(45deg);
-}
+
+    .img:after {
+        display: block;
+        width: 100%;
+        content: attr(caption);
+        position: absolute;
+        bottom: -2em;
+    }
