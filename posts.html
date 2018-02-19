@@ -7,7 +7,23 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:300,500" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./hg-common.css" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var post = window.location.href.split('?');
+        var len = post.length;
+        post = post[post.length - 1];
 
+        if (len > 1 && post != undefined) {
+            var content = "";
+            $.get("posts/" + post + ".html", function (data) { content = data; });
+
+            if (content != "") {
+                $(document).ready(function () {
+                    $("#load").html(content);
+                });
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="top">
@@ -27,7 +43,7 @@
             <a href="./events"><div class="no-select nav-item">events</div></a>
             <a href="./about"><div class="no-select nav-item">about</div></a>
             <a href="./projects"><div class="no-select nav-item">projects</div></a>
-            <a href="./contact"><div class="no-select nav-item active">contact</div></a>
+            <a href="./contact"><div class="no-select nav-item">contact</div></a>
         </div>
 
         <!-- <input type="checkbox" name="sign-in-visibility" id="sign-in-visibility" class="hidden" />
@@ -43,34 +59,14 @@
     </div>
 
     <div class="middle">
-        <div class="title">
-            <div class="text no-select">Contact Us</div>
-        </div>
-        <br />
-        <div class="content card-row">
-            <div class="card thinner align-center contact-card">
-                <a href="./email-form" target="_blank">
-                    <img src="./img/Email-Icon.svg" class="contact-icon no-select no-shadow" alt="email" />
-                    <div class="contact-text no-select">Send Us a Message</div>
-                </a>
+        <div id="load">
+            <div class="title">
+                <div class="text no-select">Post Not Found!</div>
             </div>
-            <div class="card thinner align-center contact-card">
-                <a href="https://twitter.com/hoosiergames" target="_blank">
-                    <img src="./img/Bird-Icon.svg" class="contact-icon no-select no-shadow" alt="social bird icon" />
-                    <div class="contact-text no-select">
-                        @HoosierGames
-                    </div>
-                </a>
-            </div>
-            <div class="card thinner align-center contact-card">
-                <a href="https://beinvolved.indiana.edu/organization/HoosierGames" target="_blank">
-                    <img src="./img/BeInvolved-Icon.svg" class="contact-icon no-select no-shadow" alt="BeInvolved" />
-                    <div class="contact-text no-select">
-                        Hoosier Games on
-                        <br />
-                        IU BeInvolved
-                    </div>
-                </a>
+            <br />
+            <div class="content">
+                Woops&mdash;It looks like the page you're looking for doesn't exist!<br />
+                <em>This can also happen if you have JavaScript disabled.</em>
             </div>
         </div>
     </div>

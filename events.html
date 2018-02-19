@@ -7,36 +7,35 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:300,500" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./hg-common.css" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" href="./img/HG-Icon.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
-        function setActiveEvent(element)
-        {
-            var links = document.getElementsByClassName("event-link");
-            for (i = 0; i < links.length; i++)
-            {
-                links[i].classList.remove('active');
-            }
-            element.classList.add('active');
+        var showMoreEvents = false;
+        function toggleMoreEvents() {
+            showMoreEvents = !showMoreEvents;
+            if (showMoreEvents) { $('#MoreEvents').slideDown(); } else { $('#MoreEvents').slideUp(); }
         }
     </script>
-    <link rel="icon" href="./img/HG-Icon.png" />
 </head>
 <body>
     <div class="top">
-        <div class="site-title">
-            <div class="logo"></div>
-            <div class="text no-select">
-                Hoosier&nbsp;<span class="big-text">Games</span>
+        <a href="./" class="title-link">
+            <div class="site-title">
+                <div class="logo"></div>
+                <div class="text no-select">
+                    Hoosier&nbsp;<span class="big-text">Games</span>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 
     <div class="nav all-smooth">
         <div class="nav-main">
             <a href="./"><div class="no-select nav-item">home</div></a>
-            <a href="./events.html"><div class="no-select nav-item active">events</div></a>
-            <a href="./about.html"><div class="no-select nav-item">about</div></a>
-            <a href="./projects.html"><div class="no-select nav-item">projects</div></a>
-            <a href="./contact.html"><div class="no-select nav-item">contact</div></a>
+            <a href="./events"><div class="no-select nav-item active">events</div></a>
+            <a href="./about"><div class="no-select nav-item">about</div></a>
+            <a href="./projects"><div class="no-select nav-item">projects</div></a>
+            <a href="./contact"><div class="no-select nav-item">contact</div></a>
         </div>
 
         <!-- <input type="checkbox" name="sign-in-visibility" id="sign-in-visibility" class="hidden" />
@@ -53,50 +52,78 @@
 
     <div class="middle">
         <div class="title">
-            <div class="text no-select">Events!</div>
+            <div class="text no-select">Events</div>
         </div>
-        <div class="content card-row" style="min-height: 14em;">
-            <div class="card medium-thick">
-                <strong class="big-text">Upcoming Events</strong>
-
-                <a href="./events/test-event.html" target="event-frame" class="event-link smooth active" onclick="setActiveEvent(this)">
-                    <div class="event-row">
-                        <div class="date">1/25:</div>
-                        <div class="text">Pitch Night</div>
+        <div class="content">
+            <div class="card-column">
+                <!--Event Start-->
+                <div class="card">
+                    <div class="card-title">
+                        Mid-Semester Standups
                     </div>
-                </a>
-                <a href="./events/02-15_Critchfield.html" target="event-frame" class="event-link smooth" onclick="setActiveEvent(this)">
-                    <div class="event-row">
-                        <div class="date">2/15:</div>
-                        <div class="text">Guest Talk: Virginia Critchfield</div>
+                    <div class="card-info">
+                        March 1 | 7:30pm | SB015
                     </div>
-                </a>
-                <a href="./events/03-01_MidSemester.html" target="event-frame" class="event-link smooth" onclick="setActiveEvent(this)">
-                    <div class="event-row">
-                        <div class="date">3/01:</div>
-                        <div class="text">Mid-Semester Presentations</div>
+                    <div class="card-body">
+                        Come out and see the projects made and being made by Hoosier Games
+                        members during the first half of the semester! Production Teams will
+                        be showcasing their progress along their semester long journey to a
+                        full game product, and Specialist Teams will be presenting the results
+                        of their four-week projects.
                     </div>
-                </a>
-                <a href="./events/03-08_GameNight.html" target="event-frame" class="event-link smooth" onclick="setActiveEvent(this)">
-                    <div class="event-row">
-                        <div class="date">3/08:</div>
-                        <div class="text">Pre-Spring Break Game Night</div>
+                </div>
+                <!--Event Start-->
+                <div class="card">
+                    <div class="card-title">
+                        Second Four-Week Pitches
                     </div>
-                </a>
-                <a href="./events/03-22_4WeekPitches.html" target="event-frame" class="event-link smooth" onclick="setActiveEvent(this)">
-                    <div class="event-row">
-                        <div class="date">3/22:</div>
-                        <div class="text">Second 4-Week Pitches</div>
+                    <div class="card-info">
+                        March 8 | 7:30pm | SB015
                     </div>
-                </a>
-                <a href="./events/04-26_FinalPres.html" target="event-frame" class="event-link smooth" onclick="setActiveEvent(this)">
-                    <div class="event-row">
-                        <div class="date">4/26:</div>
-                        <div class="text">Final Presentations</div>
+                    <div class="card-body">
+                        Come here the ideas for the second round of portfolio-building-focused
+                        4-week projects! These projects are open to anyone that wants to get a bit
+                        more experience working in their field of choice and are great for building
+                        up a strong collection of showcase-ready material!
                     </div>
-                </a>
+                </div>
             </div>
-            <iframe name="event-frame" class="card medium-thin full tall" src="./events/test-event.html"></iframe>
+
+            <div class="card-column" style="display: none;" id="MoreEvents">
+                <!--Event Start-->
+                <div class="card">
+                    <div class="card-title">
+                        GDC Week Game Night
+                    </div>
+                    <div class="card-info">
+                        March 22 | 7:30pm | SB015
+                    </div>
+                    <div class="card-body">
+                        With video games, board games, card games, and more, come out to a
+                        Hoosier Games Game Night to hang out with other members and
+                        have some free food and drinks. The space is open to all, so feel
+                        free to bring some friends!
+                    </div>
+                </div>
+                <!--Event Start-->
+                <div class="card">
+                    <div class="card-title">
+                        Final Presentations
+                    </div>
+                    <div class="card-info">
+                        April 26 | 7:30pm | SB015
+                    </div>
+                    <div class="card-body">
+                        The last event of the semester, teams will be showing off their final
+                        products be it a game, collection of art pieces, soundtrack, or design
+                        prototype. Be sure to come out and see what everyone's been up to,
+                        talk with groups about their projects, and see what's in store for
+                        the future of Hoosier Games.
+                    </div>
+                </div>
+            </div>
+            <input type="checkbox" id="ToggleExpand" class="expand-toggle hidden" />
+            <label for="ToggleExpand" class="expand-button" onclick="toggleMoreEvents()"><span class="cross"></span></label>
         </div>
         <div class="title">
             <div class="text no-select">Calendar</div>
