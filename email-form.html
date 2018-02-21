@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Hoosier Games</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:300,500" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./hg-common.css" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+
+</head>
+<body>
+    <div class="top">
+        <a href="./" class="title-link">
+            <div class="site-title">
+                <div class="logo"></div>
+                <div class="text no-select">
+                    Hoosier&nbsp;<span class="big-text">Games</span>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="nav all-smooth">
+        <div class="nav-main">
+            <a href="./"><div class="no-select nav-item">home</div></a>
+            <a href="./events"><div class="no-select nav-item">events</div></a>
+            <a href="./about"><div class="no-select nav-item">about</div></a>
+            <a href="./projects"><div class="no-select nav-item">projects</div></a>
+            <a href="./contact"><div class="no-select nav-item active">contact</div></a>
+        </div>
+
+        <!-- <input type="checkbox" name="sign-in-visibility" id="sign-in-visibility" class="hidden" />
+        <label for="sign-in-visibility" class="nav-item sign-in no-select">sign&nbsp;in</label>
+        <div class="dropdown no-select">
+            <div class="title no-select">Sign In</div>
+            <div class="dropdown-main">
+                <div class="input-line no-select"><span class="input-label">username:</span><input type="text" value="Hello" /></div>
+                <div class="input-line no-select"><span class="input-label">password:</span><input type="password" value="Hello" /></div>
+                <input class="input-submit no-select" type="submit" value="sign in" />
+            </div>
+        </div> -->
+    </div>
+
+    <div class="middle">
+        <div class="title">
+            <div class="text no-select">Contact Us</div>
+        </div>
+        <br />
+        <div class="content">
+            <form id="gform" method="POST" class="pure-form pure-form-stacked all-smooth fast card center" data-email="example@email.net" action="https://script.google.com/macros/s/AKfycbz1lfp1EzbCQDy99k2OUzcozQKBbChK8VFDQcpQ-BU-HgPq2lMw/exec">
+                <label for="name" class="no-select">Name</label>
+                <input id="name" name="name" placeholder="Bob Bobson" />
+
+                <label for="message" class="no-select">Message</label>
+                <textarea id="message" name="message" rows="10" placeholder="What's up?"></textarea>
+
+                <label for="email" class="no-select">Contact Email</label>
+                <input id="email" name="email" type="email" value=""
+                       required placeholder="you@email.com" />
+                <span id="email-invalid" style="display:none">
+                    Must be a valid email address
+                </span>
+
+                <button class="button-success pure-button button-xlarge">
+                    Send!
+                </button>
+            </form>
+
+            <div style="display:none; text-align:center;" id="thankyou_message" class="card center">
+                <strong class="big-text">Thanks for your message!</strong>
+                <br />
+                We'll be sure to get back to you soon
+            </div>
+
+            <!-- Submit the Form to Google Using "AJAX" -->
+            <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
+        </div>
+    </div>
+    <div class="bottom">
+        <!-- Website by Rajin Shankar, 2018 -->
+    </div>
+</body>
+</html>
