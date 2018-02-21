@@ -453,6 +453,7 @@ strong {
         height: 50vh;
         flex-grow: 1;
         background-position: center;
+        background-size: cover;
         border: 5px solid white;
         border-radius: 10px;
         width: 0%;
@@ -714,10 +715,12 @@ strong {
 .img {
     position: relative;
     background-position: center;
+    background-size: cover;
     height: 20em;
     width: 90%;
     margin: auto;
-    margin-bottom: 2.5em;
+    margin-bottom: 2em;
+    margin-top: 2em;
     border-radius: 0.2em;
     border: 1px solid #fff;
     box-shadow: 5px 5px 0 #ccc;
@@ -725,10 +728,14 @@ strong {
     text-align: center;
 }
 
-    .img:after {
-        display: block;
-        width: 100%;
-        content: attr(caption);
-        position: absolute;
-        bottom: -2em;
+    .img[caption] {
+        margin-bottom: 3.5em;
     }
+
+        .img[caption]:after {
+            display: block;
+            width: 100%;
+            content: attr(caption);
+            position: absolute;
+            bottom: -2em;
+        }
